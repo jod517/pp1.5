@@ -15,6 +15,10 @@
     <input required type="text" name="name" placeholder="New name">
     <input required type="text" name="login" placeholder="New login">
     <input required type="password" name="password" placeholder="New password">
+    <select name="role">
+        <option>user</option>
+        <option>admin</option>
+    </select>
     <input type="submit" value="Update user">
 </form>
 </form>

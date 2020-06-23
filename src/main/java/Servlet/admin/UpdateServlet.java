@@ -19,7 +19,7 @@ public class UpdateServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         request.setAttribute("col", userService.getUserById(Long.parseLong(id)));
-        request.getRequestDispatcher("/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/admin/update.jsp").forward(request, response);
     }
 
     @Override
@@ -29,8 +29,9 @@ public class UpdateServlet extends HttpServlet {
         String name = request.getParameter("name");
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+        String role = request.getParameter("role");
 
-        userService.updateUser(new User(id , name, login , password));
+        userService.updateUser(new User(id , name, login , password, role));
 
         response.sendRedirect("/admin/read");
     }
